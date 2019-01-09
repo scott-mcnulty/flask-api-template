@@ -2,4 +2,12 @@
 **.tox
 **.vscode
 **__pycache__
+NOTES.md
+
 docker-testing
+
+.coverage
+coverage.xml
+htmlcov
+pytest-results.xml
+myapi.egg-info

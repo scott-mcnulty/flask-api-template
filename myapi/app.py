@@ -1,7 +1,7 @@
 from flask import Flask
 
 from myapi import api, config
-from myapi.extensions import db, jwt, migrate, ma, cache, cors
+from myapi.extensions import db, jwt, migrate, ma, cache, cors, metrics
 from myapi.commons.log import log
 
 
@@ -28,7 +28,7 @@ def register_extensions(app):
     ma.init_app(app)
     cache.init_app(app)
     cors.init_app(app)
-
+    metrics.init_app(app)
 
     with app.app_context():
         db.init_app(app)

@@ -6,11 +6,10 @@ Flask-RESTful
 Flask-SQLAlchemy
 flask-caching
 flask-cors
+prometheus-flask-exporter
 gunicorn
 marshmallow
 marshmallow-sqlalchemy
 psycopg2
 SQLAlchemy
 tox
-virtualenv
-Werkzeug
