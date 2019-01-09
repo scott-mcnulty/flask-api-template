@@ -1,0 +1,1 @@
+gunicorn --reload --config myapi/gunicorn_config.py "myapi.app:create_app()"

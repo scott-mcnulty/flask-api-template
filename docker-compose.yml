@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  myapi:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      LOG_LEVEL: debug
+      PROCESSES: 1
+      SQLALCHEMY_DATABASE_URI: postgresql+psycopg2://user:password@postgres:5432/myapi_db
+    ports:
+      - 8000:8000
+
+  # Use postgres:password user:password credentials
+  # https://hub.docker.com/_/postgres/
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: myapi_db
+    volumes:
+      - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    ports:
+      - 5432:5432
+
+  # https://hub.docker.com/_/adminer/
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

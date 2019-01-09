@@ -1,0 +1,16 @@
+Flask
+Flask-JWT-Extended
+flask-marshmallow
+Flask-Migrate
+Flask-RESTful
+Flask-SQLAlchemy
+flask-caching
+flask-cors
+gunicorn
+marshmallow
+marshmallow-sqlalchemy
+psycopg2
+SQLAlchemy
+tox
+virtualenv
+Werkzeug
