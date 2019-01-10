@@ -17,18 +17,21 @@ def create_app(testing=False):
     app.config.from_object(_config)
     log('Set app config using `{}` with values: {}'.format(_config.__name__, _config.__dict__), 'debug')
 
-    register_extensions(app)
+    register_extensions(app, testing)
     register_blueprints(app)
     return app
 
 
-def register_extensions(app):
+def register_extensions(app, testing=False):
 
     jwt.init_app(app)
     ma.init_app(app)
     cache.init_app(app)
     cors.init_app(app)
-    metrics.init_app(app)
+    
+    # Getting: ValueError: Duplicated timeseries in CollectorRegistry: {'flask_http_request_duration_seconds_sum', 'flask_http_request_duration_seconds_count', 'flask_http_request_duration_seconds_bucket', 'flask_http_request_duration_seconds_created'}
+    if not testing:
+        metrics.init_app(app)
 
     with app.app_context():
         db.init_app(app)

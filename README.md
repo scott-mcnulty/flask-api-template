@@ -1,12 +1,13 @@
 # Flask api template
 
-Small Flask api to use as a template for a python api.
+A small template to use as a starting point for a Flask api.
 
 # Table of Contents
 
 - [Flask api template](#flask-api-template)
 - [Table of Contents](#table-of-contents)
   - [Myapi Directory Structure](#myapi-directory-structure)
+  - [Testing](#testing)
   - [Credits](#credits)
 
 ## Myapi Directory Structure
@@ -33,6 +34,20 @@ Small Flask api to use as a template for a python api.
     └── models                          : Any database models
         ├── __init__.py
         └── product.py
+
+## Testing
+
+Tests are run using the `tox` testing framework along with pytest. First install `tox`:
+
+```sh
+pip install tox
+```
+
+Next run tox:
+
+```sh
+tox
+```
 
 ## Credits
 
