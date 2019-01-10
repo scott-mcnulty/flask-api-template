@@ -90,10 +90,10 @@ class ProductsAPI(Resource):
 class ProductAPIResponseMessages(object):
     """Common product api response messages."""
 
-    @classmethod
-    def product_record_info_json(cls, product):
+    @staticmethod
+    def product_record_info_json(product):
         product_schema = ProductSchema()
-        return product_schema(product).data
+        return product_schema.dump(product).data
 
     @staticmethod
     def no_product_with_id(product_id):
