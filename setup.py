@@ -15,6 +15,8 @@ setup(
         'flask-jwt-extended',
         'flask-marshmallow',
         'flask-caching',
+        'flask-cors',
+        'prometheus-flask-exporterth'
         'marshmallow-sqlalchemy',
         'psycopg2',
         'gunicorn'

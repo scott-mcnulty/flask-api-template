@@ -7,8 +7,10 @@ A small template to use as a starting point for a Flask api.
 - [Flask api template](#flask-api-template)
 - [Table of Contents](#table-of-contents)
   - [Myapi Directory Structure](#myapi-directory-structure)
+  - [Running the Application](#running-the-application)
+  - [Deployment](#deployment)
   - [Testing](#testing)
-  - [Credits](#credits)
+    - [Credits](#credits)
 
 ## Myapi Directory Structure
 
@@ -29,11 +31,19 @@ A small template to use as a starting point for a Flask api.
     │       └── product.py
     ├── commons                         : Any common modules
     │   ├── __init__.py
-    │   ├── log.py                      : Logging thats straped to the gunicorn logger
+    │   ├── log.py                      : Logging thats strapped to the gunicorn logger
     │   └── paginate.py                 : Pagination for querying
     └── models                          : Any database models
         ├── __init__.py
         └── product.py
+
+## Running the Application
+
+The app can be run using either the Dockerfile, docker-compose file, or by intsalling the packages locally and using the run.sh file. The application will be running on port `8000` with api url endpoints specified in the [myapi/api/endpoints.py](myapi/api/endpoints.py) file. At `/metrics` you'll see application metrics being exported that can be pulled in by a monitoring system such as prometheus.
+
+## Deployment
+
+The application can be deployed using a self hosting service with the `Dockerfile`. As an example this code was deployed using Heroku at the url `https://myapi-flask-template.herokuapp.com`.
 
 ## Testing
 
@@ -49,9 +59,9 @@ Next run tox:
 tox
 ```
 
-## Credits
+### Credits
 
 Code is based on:
 
-  [cookiecutter-flask](https://github.com/sloria/cookiecutter-flask.git)  
-  [cookiecutter-flask-restful](https://github.com/karec/cookiecutter-flask-restful.git)
+- [cookiecutter-flask](https://github.com/sloria/cookiecutter-flask.git)
+- [cookiecutter-flask-restful](https://github.com/karec/cookiecutter-flask-restful.git)
