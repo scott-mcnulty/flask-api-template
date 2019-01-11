@@ -8,7 +8,7 @@ class Product(Model):
     """Model for a product record"""
 
     __tablename__ = 'products'
-    product_id = db.Column(db.Integer, unique=True, nullable=False, primary_key=True)
+    product_id = db.Column(db.Integer, unique=True, nullable=True, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
     value = db.Column(db.Float, nullable=False)
     created_at = db.Column(db.DateTime, nullable=False, default=dt.datetime.utcnow)

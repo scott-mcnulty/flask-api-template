@@ -36,7 +36,7 @@ class ProductAPI(Resource):
     #     return ProductAPIResponseMessages.not_implemented()
 
     @jwt_required
-    def put(self, product_id):
+    def put(self, product_id=None):
         """Handles PUT requests"""
 
         # Gets the supplied args
