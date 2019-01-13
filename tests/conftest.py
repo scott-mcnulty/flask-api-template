@@ -2,7 +2,7 @@ import json
 import pytest
 
 from myapi.app import create_app
-from myapi.extensions import db as _db, migrate
+from myapi.extensions import db as _db
 from myapi import config
 
 
@@ -56,10 +56,8 @@ def auth_header(client):
 
 @pytest.fixture
 def example_product_json():
-    _example_product_json = {
-        "id": 123456789,
+    return {
         "name": "The Greatest Showman (Blu-ray + DVD + Digital)",
         "value": 19.99
     }
-    return _example_product_json
 

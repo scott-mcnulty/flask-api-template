@@ -20,8 +20,11 @@ class ProductAPI(Resource):
         product_parser.add_argument('value', type=float, required=True, help='No `value` supplied.', location='json')
         self.product_parser = product_parser
 
-    def get(self, product_id):
+    def get(self, product_id=None):
         """Handles GET requets"""
+
+        if product_id == None:
+            return ProductAPIResponseMessages.no_product_id_supplied(), 400
 
         # Check our storage for the product
         product = Product.query.filter_by(product_id=product_id).first()
@@ -30,10 +33,7 @@ class ProductAPI(Resource):
         if product:
             return ProductAPIResponseMessages.product_record_info_json(product)
 
-        return ProductAPIResponseMessages.no_product_with_id(product_id)
-
-    # def post(self):
-    #     return ProductAPIResponseMessages.not_implemented()
+        return ProductAPIResponseMessages.no_product_with_id()
 
     @jwt_required
     def put(self, product_id=None):
@@ -96,8 +96,12 @@ class ProductAPIResponseMessages(object):
         return product_schema.dump(product).data
 
     @staticmethod
-    def no_product_with_id(product_id):
-        return {'message': 'No product with id: {}'.format(product_id)}
+    def no_product_id_supplied():
+        return {'message': 'No product id supplied'}
+
+    @staticmethod
+    def no_product_with_id():
+        return {}
         
     @staticmethod
     def no_product_to_delete(product_id):
