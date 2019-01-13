@@ -6,6 +6,7 @@ Flask-RESTful
 Flask-SQLAlchemy
 flask-caching
 flask-cors
+flasgger
 prometheus-flask-exporter
 gunicorn
 marshmallow

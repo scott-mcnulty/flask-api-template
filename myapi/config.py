@@ -20,6 +20,12 @@ class BaseConfig(object):
 
     # JWT
 
+    # Flasgger
+    SWAGGER = {
+        'title': 'Myapi swagger docs.',
+        'doc_dir': './myapi/api/docs/'
+    }
+
 
 class TestConfig(BaseConfig):
     """Used for when we run tests"""

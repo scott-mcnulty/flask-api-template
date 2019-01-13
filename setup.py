@@ -16,7 +16,8 @@ setup(
         'flask-marshmallow',
         'flask-caching',
         'flask-cors',
-        'prometheus-flask-exporterth'
+        'flasgger',
+        'prometheus-flask-exporter',
         'marshmallow-sqlalchemy',
         'psycopg2',
         'gunicorn'

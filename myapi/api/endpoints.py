@@ -8,8 +8,7 @@ from myapi.api.modules import (
     ProductsAPI
 )
 
-blueprint = Blueprint('api', __name__)
-api = Api(blueprint)
+api = Api()
 
 api.add_resource(HelloAPI, '/hello')
 api.add_resource(AuthAPI, '/auth')

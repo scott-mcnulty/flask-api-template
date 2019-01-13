@@ -1,0 +1,5 @@
+tags:
+  - hello
+responses:
+  200:
+    description: Returns a hello world message.

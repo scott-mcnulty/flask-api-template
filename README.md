@@ -39,7 +39,16 @@ A small template to use as a starting point for a Flask api.
 
 ## Running the Application
 
-The app can be run using either the Dockerfile, docker-compose file, or by intsalling the packages locally and using the run.sh file. The application will be running on port `8000` with api url endpoints specified in the [myapi/api/endpoints.py](myapi/api/endpoints.py) file. At `/metrics` you'll see application metrics being exported that can be pulled in by a monitoring system such as prometheus.
+The app can be run using either the Dockerfile, docker-compose file, or by intsalling the packages locally and using the run.sh file. The application will be running on port `8000`. Below is some basic information about the pre-configured url endpoints. 
+
+| url         | description |
+|:-           |:-    |
+| /hello      | The hello api. |
+| /auth       | Authorization api for JWT. |
+| /product    | Product api for getting/updating/deleting a single product. |
+| /products   | Products api for getting many products. |
+| /metrics    | Exported application metridcs. |
+| /apidocs    | Swagger api documentation. |
 
 ## Deployment
 
@@ -61,7 +70,4 @@ tox
 
 ### Credits
 
-Code is based on:
-
-- [cookiecutter-flask](https://github.com/sloria/cookiecutter-flask.git)
-- [cookiecutter-flask-restful](https://github.com/karec/cookiecutter-flask-restful.git)
+Code inspired by some of the cookiecutter python projects out there like cookiecutter-flask and cookiecutter-flask-restful.
