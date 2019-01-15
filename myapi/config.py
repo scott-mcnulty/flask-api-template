@@ -1,14 +1,19 @@
-"""Different application configurations"""
 import os
 
 
 class BaseConfig(object):
+    """
+    Base application config.
+    """
 
+    # Flask
+    # http://flask.pocoo.org/docs/config
     DEBUG = os.environ.get('DEBUG', True)
     TESTING = os.environ.get('TESTING', True)
     SECRET_KEY = os.environ.get('SECRET_KEY', 'SECRET_KEY')
 
-    # SQLAlchemy
+    # Flask SQLAlchemy
+    # http://flask-sqlalchemy.pocoo.org/config
     SQLALCHEMY_DATABASE_URI = os.environ.get(
         'SQLALCHEMY_DATABASE_URI',
         'sqlite:////tmp/myapi.db'
@@ -18,12 +23,17 @@ class BaseConfig(object):
         False
     )
 
-    # JWT
+    # Flask JWT Extended
+    # https://flask-jwt-extended.readthedocs.io/en/latest/options.html
+
+    # Flask Caching
+    # https://flask-caching.readthedocs.io/en/latest/#configuration-flask-caching
+    CACHE_TYPE = os.environ.get('CACHE_TYPE', 'simple')
 
     # Flasgger
+    # https://github.com/rochacbruno/flasgger
     SWAGGER = {
-        'title': 'Myapi swagger docs.',
-        'doc_dir': './myapi/api/docs/'
+        'title': 'Myapi'
     }
 
 
