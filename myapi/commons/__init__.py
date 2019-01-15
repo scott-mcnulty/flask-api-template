@@ -1,5 +1,5 @@
-from .log import log
-from .paginate import paginate
+from myapi.commons.log import log
+from myapi.commons.paginate import paginate
 
 
 __all__ = [

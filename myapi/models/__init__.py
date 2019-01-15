@@ -1,4 +1,4 @@
-from .product import (
+from myapi.models.product import (
     Product,
     ProductSchema
 )
